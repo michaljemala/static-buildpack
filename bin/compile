@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+cat > "$BUILD_DIR/start.sh" <<EOF
+#!/usr/bin/env bash
+
+(cd \$HOME && python -m SimpleHTTPServer \$PORT)
+EOF
+chmod 755 "$BUILD_DIR/start.sh"
